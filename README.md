@@ -18,7 +18,7 @@ TOPIC=        # 32 bytes = 64 hex chars
 SERVER_KEY=   # server public key
 CLIENT_KEYS=  # comma separated list of client public keys
 
-# Keypairs; you can generate these with `node keygen`
+# Keypairs; you can generate these with `node example/keygen`
 SERVER_PUBLIC_KEY=
 SERVER_SECRET_KEY=
 

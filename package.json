@@ -1,4 +1,11 @@
 {
+  "name": "noise-p2p",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "hyperswarm": "^2.14.0",
     "length-prefixed-stream": "^2.0.0",
@@ -15,6 +22,22 @@
   "devDependencies": {
     "@emilbayes/capped-array": "^1.0.0",
     "compare": "^2.0.0",
-    "dotenv": "^8.2.0"
-  }
+    "dotenv": "^8.2.0",
+    "standard": "^14.3.4"
+  },
+  "scripts": {
+    "pretest": "standard",
+    "test": "true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emilbayes/noise-p2p.git"
+  },
+  "keywords": [],
+  "author": "Emil Bay <github@tixz.dk>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emilbayes/noise-p2p/issues"
+  },
+  "homepage": "https://github.com/emilbayes/noise-p2p#readme"
 }
