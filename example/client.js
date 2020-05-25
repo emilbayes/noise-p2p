@@ -48,7 +48,7 @@ var s = new Client({
           var delta = peer.timing.now() - request.start
 
           peer.timing.add(diff, delta)
-          console.log(peer.gid, {
+          console.log(peer.gid, peer.remoteStaticKey.subarray(0, 4).toString('hex'), {
             drift: peer.timing.drift.median.toFixed(2),
             ping: peer.timing.ping.median.toFixed(2)
           })
