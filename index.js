@@ -190,7 +190,7 @@ class Client extends Nanoresource {
       announce: false,
       lookup: true
     }, () => {
-      setTimeout(() => this._reconnect(cb), 1500)
+      setTimeout(() => this._reconnect(cb), 5000)
     })
   }
 
