@@ -25,7 +25,7 @@ class Drift {
     if (samples.length === 1) return { mean: samples[0], stddev: 0, median: samples[0] }
 
     const mean = samples.reduce(sum, 0) / samples.length
-    const variance = samples.map(dist).reduce(sum, 0) / samples.length
+    const variance = samples.map((xi) => (xi - mean) ** 2).reduce(sum, 0) / samples.length
     const stddev = Math.sqrt(variance)
 
     const left = mean - stddev
@@ -34,13 +34,9 @@ class Drift {
       return xi > left && xi < right
     }).sort(compare)
 
-    const median = inrange[inrange.length / 2 | 0]
+    const median = inrange.length > 0 ? inrange[inrange.length / 2 | 0] : samples[0]
 
     return { mean, stddev, median }
-
-    function dist (xi) {
-      return (xi - mean) ** 2
-    }
 
     function sum (s, n) {
       return s + n
