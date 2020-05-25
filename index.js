@@ -13,6 +13,8 @@ class Peer extends Nanoresource {
 
     this.socket = socket
     this.behaviour = behaviour
+
+    this.remotePublicKey = null
   }
 
   _open (cb) {
@@ -24,6 +26,10 @@ class Peer extends Nanoresource {
 
       return cb(err)
     }
+
+    this.socket.once('handshake', ({ remoteStaticKey }) => {
+      this.remotePublicKey = Buffer.from(remoteStaticKey)
+    })
 
     this.socket.once('connected', done)
     this.socket.once('error', done)
